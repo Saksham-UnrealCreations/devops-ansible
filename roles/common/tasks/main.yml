@@ -1,0 +1,13 @@
+- name: Update package metadata
+  apt:
+    update_cache: true
+
+- name: Install common packages
+  apt:
+    name: "{{ common_packages }}"
+    state: present
+
+- name: Ensure Python is present
+  apt:
+    name: python3
+    state: present

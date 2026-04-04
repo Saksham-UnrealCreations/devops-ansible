@@ -1,0 +1,9 @@
+- name: installing common packages
+  hosts: all
+  become: true
+
+  vars_files:
+    - ../group_vars/all.yml
+      
+  roles:
+    - common

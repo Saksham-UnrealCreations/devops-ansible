@@ -1,0 +1,3 @@
+jenkins_package: jenkins
+docker_package: docker.io
+java_package: openjdk-17-jdk

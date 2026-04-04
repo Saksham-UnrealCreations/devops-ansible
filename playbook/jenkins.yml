@@ -1,0 +1,11 @@
+- name: installing jenkins
+  hosts: _jenkins_docker
+  become: true
+  
+  vars_files:
+    - ../group_vars/packages.yml
+
+  roles:
+    - java
+    - jenkins
+    - docker

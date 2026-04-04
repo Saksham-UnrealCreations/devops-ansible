@@ -1,0 +1,14 @@
+plugin: amazon.aws.aws_ec2
+
+regions:
+  - us-east-1   #can give multiple regions here
+
+filters:
+  instance-state-name: running  #will fetch only running servers
+
+hostnames:
+  - private-ip-address   #will fetch those servers private ips
+
+keyed_groups:
+  - key: tags.Role
+  #- key: tags.Name  #will create seperate groups with the server's name i.e tags_Name_ansbile worker 1

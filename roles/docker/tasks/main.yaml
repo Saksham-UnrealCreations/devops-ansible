@@ -1,0 +1,21 @@
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install Docker
+  apt:
+    name: "{{ docker_package }}"
+    state: present
+
+- name: Start and enable Docker
+  service:
+    name: docker
+    state: started
+    enabled: true
+
+- name: Add jenkins user to docker group if present
+  user:
+    name: jenkins
+    groups: docker
+    append: true
+  ignore_errors: true

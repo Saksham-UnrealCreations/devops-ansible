@@ -1,0 +1,6 @@
+common_packages:
+  - git
+  - wget
+  - unzip
+  - tar
+  - curl
