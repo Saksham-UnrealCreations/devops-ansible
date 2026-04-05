@@ -35,12 +35,6 @@
     name: "{{ jenkins_package }}"
     state: present
 
-- name: Add jenkins user to docker group
-  ansible.builtin.user:
-    name: jenkins
-    groups: docker
-    append: yes
-
 - name: Enable and start Jenkins
   ansible.builtin.systemd:
     name: jenkins
